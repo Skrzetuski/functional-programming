@@ -13,14 +13,31 @@
   [smallest-number]
   (reduce + (map mod (repeat 20 smallest-number) (range 2 21)))) ;;2->20
 
+(defn div-number-in-range?
+  [number div-start div-max]
+  (if (and (not= 0 (mod number div-start)) (< div-start div-max))
+    false
+    (if (>= div-start div-max)
+      true
+      (recur number (inc div-start) div-max)))
+  )
+
 (defn euler
-  [numb]
-  (if (zero? (remainder numb))
-    (println numb)
-    (recur (inc20 numb)))
+  [number]
+  (if (zero? (remainder number))
+    number
+    (recur (inc20 number)))
+  )
+
+(defn faster-euler
+  [number]
+  (if (div-number-in-range? number 2 20)
+    number
+    (recur (inc20 number)))
   )
 
 (defn -main
   [& args]
-  (time (euler smallest-number)) ;; 26,5s
+  ;;(time (println (faster-euler smallest-number))) 676 ms
+  ;;(time (euler smallest-number)) ;; 26,5s
   )
