@@ -2,7 +2,8 @@
   (:gen-class)
   (:require [fp.heron :as heron])
   (:require [fp.cube :as cube])
-  (:require [fp.euler :as euler5]))
+  (:require [fp.euler :as euler5])
+  (:require [fp.db :as db]))
 
 (defn -main
   [& args]
@@ -25,4 +26,12 @@
   ;; Third task: Euler 5 problem
   (println "Task 3.")
   (println (str "Euler5 = " (euler5/faster-euler 2520)))    ;;232792560
+  ;; Fourth Task: add address to db
+  (println "Task 4.")
+  (db/add-person! "doma@gmail.com" "Jan" "Dom" "Lodz" "Paul" "21/37" "22-031")
+  (println (str (db/first-name "doma@gmail.com") " "
+           (db/last-name "doma@gmail.com") "\n"
+           (db/address "doma@gmail.com")))
+            ;;Jan Dom
+            ;;Lodz, ul. Paul 21/37 22-031
   )

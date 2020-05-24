@@ -23,19 +23,7 @@
 
 (defn address
   [email]
-  (str (:city (@persons-atom email))      ", "
+  (str (:city (@persons-atom email))      ", ul. "
        (:street (@persons-atom email))    " "
        (:nr-street (@persons-atom email)) " "
        (:post-code (@persons-atom email))))
-
-(defn -main
-  [& args]
-  (println persons-atom)
-  (add-person! "kkk@gmail.com" "Kordian" "Graba" "Lodz" "Li(s)powa" "6/9" "91-200")
-  (add-person! "doma@gmail.com" "Jan" "Dom" "Lodz" "Paul" "21/37" "22-031")
-  (add-person! "opium@gmail.com" "Ludomir" "Leono" "Lodz" "Zachlapana" "6" "91-430")
-  (println persons-atom)
-  (println str "\n"
-           (first-name "doma@gmail.com")
-           (last-name "doma@gmail.com")
-           (address "doma@gmail.com")))
