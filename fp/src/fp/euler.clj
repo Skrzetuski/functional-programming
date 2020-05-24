@@ -3,7 +3,7 @@
 ;;2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 ;;What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-(def smallest-number 2520)
+;;(def smallest-number 2520)
 
 (defn inc20
   [number]
@@ -36,8 +36,8 @@
     (recur (inc20 number)))
   )
 
-(defn -main
-  [& args]
-  ;;(time (println (faster-euler smallest-number))) 676 ms
-  ;;(time (euler smallest-number)) ;; 26,5s
-  )
+;;(defn -main
+;;  [& args]
+;;  ;;(time (println (faster-euler smallest-number))) 676 ms
+;;  ;;(time (euler smallest-number)) ;; 26,5s
+;;  )

@@ -1,7 +1,8 @@
 (ns fp.core
   (:gen-class)
   (:require [fp.heron :as heron])
-  (:require [fp.cube :as cube]))
+  (:require [fp.cube :as cube])
+  (:require [fp.euler :as euler5]))
 
 (defn -main
   [& args]
@@ -20,4 +21,8 @@
   (print "cube-root 125 = ")
   (println (double (cube/heron-cube 1 125)))  ;;5.000037942835659
   (print "cube-root 64 = ")
-  (println (double (cube/heron-cube 1 64))))  ;;4.000017449510738
+  (println (double (cube/heron-cube 1 64)))   ;;4.000017449510738
+  ;; Third task: Euler 5 problem
+  (println "Task 3.")
+  (println (str "Euler5 = " (euler5/faster-euler 2520)))    ;;232792560
+  )
